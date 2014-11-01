@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     rack (1.5.2)
+    redis (3.1.0)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -11,4 +12,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  redis
   sinatra (= 1.1.0)
