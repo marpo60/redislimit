@@ -1,0 +1,25 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Redis visits status
+    %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css", :rel => "stylesheet"}/
+  %body
+    .container
+      %h1 Visits
+
+      %table.table
+        %thead
+          %tr
+            %th Path
+            %th Count
+            %th TTL
+            %tbody
+            - visits.each do |visit|
+              %tr{class: [visit.count > 9 && "danger",
+                          visit.count < 10 && visit.count > 5 && "warning",
+                          visit.count > 0 && visit.count < 6 && "success" ] }
+                %td= visit.path
+                %td= visit.count
+                %td= visit.ttl
