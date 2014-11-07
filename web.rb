@@ -50,6 +50,10 @@ get '/' do
   template.render(self, visits: Visit.all)
 end
 
+get '/favicon.ico' do
+  200
+end
+
 get '/destroy' do
   Visit.destroy_all
 end
